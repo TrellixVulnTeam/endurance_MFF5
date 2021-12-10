@@ -1,10 +1,37 @@
 .navigation {
-  @extend %cover;
+  position: fixed;
+  top: 0;
+  left: 0;
 
-  pointer-events: none;
+  width: 100%;
+
   z-index: z('navigation');
+
+  display: flex;
+}
+
+.navigation__left, .navigation__center, .navigation__right   {
+  flex: 1;
+  align-items: center;
+  display: flex;
+  padding: 1rem;
+
+  &:nth-child(2) {
+    justify-content: center;
+  }
+  &:nth-child(3) {
+    justify-content: flex-end;
+
+    a {
+      margin: 0 1rem 0 1rem;
+    }
+  }
 }
 
 .navigation__link {
   pointer-events: auto;
+
+  font-family: $font-six-caps;
+  font-size: 3.5rem;
+  color: #1f1f1f;
 }

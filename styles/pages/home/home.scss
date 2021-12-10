@@ -3,7 +3,6 @@
 
   font-family: $font-glamore;
   font-size: 20rem;
-  word-break: break-all;
 
   &--active {
     @extend %page--active;
@@ -12,38 +11,50 @@
 
 .home__content {
   @extend %content;
-  height: 150vh;
+
+  height: 100vh;
+}
+
+.home__gallery {
+  height: 38rem;
+  width: 150vw;
+
+  border: 1px solid #000;
+
+  transform: translate(-50%, -50%) rotateZ(15deg);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
 }
 
 .home__gallery__media {
     width: 45rem;
     height: 30rem;
-    margin: 4rem 4.34rem;
-    position: absolute;
+
+    position: inherit;
 
     &:nth-child(1) {
-      top: 10rem;
-      left: 20rem;
+      left: 0;
     }
 
     &:nth-child(2) {
-      top: 10rem;
-      left: 100rem;
+      left: 60rem;
     }
 
     &:nth-child(3) {
-      top: 50rem;
-      left: 20rem;
+      left: 120rem;
     }
 
     &:nth-child(4) {
-      top: 50rem;
-      left: 100rem;
+      left: 180rem;
     }
 
     &:nth-child(5) {
-      top: 100rem;
-      left: 20rem;
+      left: 240rem;
     }
 }
 
@@ -51,4 +62,34 @@
   width: inherit;
   height: inherit;
   object-fit: cover;
+}
+
+.home__titles {
+  display: flex;
+  align-items: center;
+
+  color: #1f1f1f;
+
+  transform: translate(-50%, -50%) rotateZ(-15deg);
+
+  position: absolute;
+  top: 55%;
+  left: 50%;
+}
+
+.home__titles__title {
+  font-size: 18.5rem;
+
+  margin: 0 8rem;
+}
+
+.home__store__link {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 3rem;
+  color: #1f1f1f;
 }
