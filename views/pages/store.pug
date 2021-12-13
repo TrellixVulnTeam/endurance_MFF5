@@ -1,0 +1,29 @@
+extends ../base.pug
+
+block variables
+  - var template = 'store'
+
+block body
+  .store
+    .store__content
+      .store__header
+        .store__text
+          .store__text__title our products
+          .store__text__subtitle buy what matches your <br> good taste
+        .store__marquee
+          | black november sale <span>&#8226</span> special offer <span>&#8226</span>
+          | black november sale <span>&#8226</span> special offer <span>&#8226</span>
+          | black november sale <span>&#8226</span> special offer <span>&#8226</span>
+          | black november sale <span>&#8226</span> special offer <span>&#8226</span>
+          | black november sale <span>&#8226</span> special offer <span>&#8226</span>
+
+      .store__items__row
+        .store__items__card
+          .store__items__card__header
+            h3.store__items__card__header__title classic rosé hat
+            p.store__items__card__header__subtitle $ 79.99
+          .store__items__card__content
+            figure.store__items__card__content__media
+              img.store__items__card__content__media__image(src='https://i.imgur.com/TCsqdOE.jpg')
+          .store__items__card__cta
+              button.store__items__card__cta__button add to cart

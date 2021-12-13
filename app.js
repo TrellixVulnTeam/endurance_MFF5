@@ -38,6 +38,10 @@ app.get('/about', (request, response) => {
   response.render('pages/about')
 })
 
+app.get('/store', (request, response) => {
+  response.render('pages/store')
+})
+
 app.use((request, response) => {
   response.status(404)
 
