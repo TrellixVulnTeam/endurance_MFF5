@@ -52,15 +52,14 @@
 .store__items__row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex: 3;
+  justify-content: space-evenly;
+  flex: 3.5;
 }
 
 .store__items__card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #6d6d6d;
-  padding: 1.5rem;
+  padding: 1.5rem 4.5rem;
 }
 
 .store__items__card__header {
@@ -103,4 +102,10 @@
   color: #fff;
   font-family: $font-glamore;
   margin-top: 1rem;
+}
+
+.store__items__stripe{
+  height: 100%;
+  width: 1px;
+  border: 1px solid #6d6d6d;
 }
