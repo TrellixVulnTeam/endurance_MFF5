@@ -22,13 +22,13 @@
 
 .store__text {
   font-family: $font-glamore;
-  font-size: 8rem;
+  font-size: 7.2rem;
   height: inherit;
-  margin-left: 2rem;
+  margin: 3rem 0 0 2rem;
 }
 
 .store__text__subtitle {
-  font-size: 4rem;
+  font-size: 3.2rem;
   color: #6d6d6d;
 }
 
@@ -37,11 +37,13 @@
   justify-content: space-between;
   font-familY: $font-glamore;
   font-size: 2rem;
-  width: 120%;
+  width: 210%;
   background: #1f1f1f;
   color: #fff;
   text-align: center;
   padding: 1rem;
+  will-change: transform;
+  animation: marquee 32s linear infinite;
 
   span {
     font-family: Arial, Helvetica, sans-serif
@@ -54,6 +56,9 @@
   align-items: center;
   justify-content: space-evenly;
   flex: 3.5;
+  border-bottom: 1px solid #6d6d6d;
+  width: 150%;
+  will-change: transform;
 }
 
 .store__items__card {
@@ -108,4 +113,13 @@
   height: 100%;
   width: 1px;
   border: 1px solid #6d6d6d;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

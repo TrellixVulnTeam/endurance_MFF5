@@ -125,6 +125,10 @@ export default class extends EventEmitter {
     element.style[this.transformPrefix] = `translate3d(0, ${-Math.round(y)}px, 0)`
   }
 
+  transformX (element, x) {
+    element.style[this.transformPrefix] = `translate3d(${-Math.round(x)}px, 0, 0)`
+  }
+
   /**
    * Events.
    */
@@ -188,6 +192,10 @@ export default class extends EventEmitter {
 
     if (this.elements.wrapper) {
       this.transform(this.elements.wrapper, this.scroll.current)
+    }
+
+    if (this.elements.wrapperX) {
+      this.transformX(this.elements.wrapperX, this.scroll.current)
     }
 
     this.scroll.last = this.scroll.current

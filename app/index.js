@@ -12,6 +12,7 @@ import Detection from 'classes/Detection'
 
 import About from 'pages/About'
 import Home from 'pages/Home'
+import Store from 'pages/Store'
 
 import Canvas from 'components/Canvas'
 import Preloader from 'components/Preloader'
@@ -33,6 +34,7 @@ class App {
     this.pages = new Map()
     this.pages.set('about', new About())
     this.pages.set('home', new Home())
+    this.pages.set('store', new Store())
 
     this.page = this.pages.get(this.template)
     this.page.create()

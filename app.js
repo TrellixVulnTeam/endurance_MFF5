@@ -1,7 +1,5 @@
 require('dotenv').config()
 
-const { map, each } = require('lodash')
-
 const app = require('./config')
 
 const Prismic = require('@prismicio/client')
@@ -42,9 +40,7 @@ app.get('/about', (request, response) => {
 
 app.get('/store', async (request, response) => {
   const api = await initApi(request)
-  const { results: products } = await api.query(Prismic.Predicates.at('document.type', 'product'), {
-    pageSize: 4
-  })
+  const { results: products } = await api.query(Prismic.Predicates.at('document.type', 'product'))
 
   response.render('pages/store', {
     products
