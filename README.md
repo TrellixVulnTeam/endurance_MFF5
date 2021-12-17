@@ -1,3 +1,5 @@
-## Web Boilerplate
+## Conceptual website for luxury brand.
 
-Basic startup template for projects using Pug, Sass, Node and OGL.
+Creative Website with interactions on scroll.
+
+(under construction)
