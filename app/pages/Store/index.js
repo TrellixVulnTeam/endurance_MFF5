@@ -9,7 +9,7 @@ export default class extends Page {
       element: '.store',
       elements: {
         wrapper: '.store__content',
-        wrapperX: '.store__items__row'
+        wrapperX: '.store__items__row__wrapper'
       }
     })
   }
