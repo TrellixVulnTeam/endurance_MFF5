@@ -106,7 +106,7 @@ export default class extends EventEmitter {
   set (value) {
     this.scroll.current = this.scroll.target = this.scroll.last = value
 
-    this.transform(this.elements.wrapper, this.scroll.current)
+    this.transform(!this.elements.wrapperX ? this.elements.wrapper : this.elements.wrapperX, this.scroll.current)
   }
 
   show (url) {
@@ -195,7 +195,7 @@ export default class extends EventEmitter {
     }
 
     if (this.elements.wrapperX) {
-      this.transformX(this.elements.wrapperX, this.scroll.current)
+      this.transform(this.elements.wrapperX, this.scroll.current)
     }
 
     this.scroll.last = this.scroll.current

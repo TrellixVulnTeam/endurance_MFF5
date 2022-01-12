@@ -29,3 +29,6 @@ export default class extends Page {
     return super.hide(url)
   }
 }
+
+// TODO: Find why the scroll current is passing 0 on the pages.
+// TODO: PS: It passes the right value at about page.

@@ -3,6 +3,10 @@
   width: 100vw;
   color: #1f1f1f;
   overflow: hidden;
+
+  &--active {
+    @extend %page--active;
+  }
 }
 
 .store__content {
@@ -67,6 +71,7 @@
   align-items: center;
   justify-content: space-evenly;
   flex: inherit;
+  position: absolute;
   will-change: transform;
 }
 

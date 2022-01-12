@@ -7,7 +7,18 @@
   transform-origin: 0 0;
   z-index: z('preloader');
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &--loaded {
     transform: scaleY(0);
   }
+
+}
+
+.preloader__number {
+  font-family: $font-six-caps;
+  font-size: 20rem;
+  color: #000;
 }
