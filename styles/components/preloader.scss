@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   &--loaded {
     transform: scaleY(0);
@@ -17,8 +18,20 @@
 
 }
 
+.preloader__text {
+  font-family: $font-glamore;
+  font-size: 3.5rem;
+  color: #1f1f1f;
+
+  z-index: 4;
+}
+
 .preloader__number {
   font-family: $font-six-caps;
-  font-size: 8rem;
-  color: #1f1f1f;
+  font-size: 80rem;
+  color: #c0c0c0;
+
+  position: absolute;
+  left: 54%;
+  top: 4%;
 }
