@@ -7,14 +7,16 @@ block body
   .home
     .home__content
       .home__gallery
-        each image in gallery
-          figure.home__gallery__media
-            img.home__gallery__media__image(src=image, data-src=image)
+        .home__gallery__wrapper
+          each image in gallery
+            figure.home__gallery__media
+              img.home__gallery__media__image(src=image, data-src=image)
       .home__titles
-        h2.home__titles__title casual
-        h2.home__titles__title elegant
-        h2.home__titles__title street
-        h2.home__titles__title winter
-        h2.home__titles__title teen
+        .home__titles__wrapper
+          h2.home__titles__title casual
+          h2.home__titles__title elegant
+          h2.home__titles__title street
+          h2.home__titles__title winter
+          h2.home__titles__title teen
 
       a.home__store__link(href='/store') visit our store

@@ -31,6 +31,16 @@
   align-items: center;
 }
 
+.home__gallery__wrapper {
+  width: inherit;
+  height: inherit;
+
+  position: inherit;
+
+  display: flex;
+  align-items: center;
+}
+
 .home__gallery__media {
     width: 45rem;
     height: 30rem;
@@ -75,6 +85,17 @@
   position: absolute;
   top: 55%;
   left: 50%;
+}
+
+.home__titles__wrapper {
+  display: inherit;
+  align-items: inherit;
+
+  transform: translate(-50%, -50%);
+
+  position: inherit;
+  top: inherit;
+  left: inherit;
 }
 
 .home__titles__title {

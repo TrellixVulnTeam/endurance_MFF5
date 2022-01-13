@@ -1,7 +1,7 @@
 .preloader {
   @extend %cover;
 
-  background: $color-white;
+  background: $color-pearl-bush;
   overflow: hidden;
   position: fixed;
   transform-origin: 0 0;
@@ -19,6 +19,6 @@
 
 .preloader__number {
   font-family: $font-six-caps;
-  font-size: 20rem;
-  color: #000;
+  font-size: 8rem;
+  color: #1f1f1f;
 }
