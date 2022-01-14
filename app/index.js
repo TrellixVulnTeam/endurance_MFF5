@@ -15,7 +15,7 @@ import Home from 'pages/Home'
 import Store from 'pages/Store'
 
 import Canvas from 'components/Canvas'
-import Preloader from 'components/Preloader'
+import Preloader from './components/Preloader'
 
 class App {
   constructor () {
@@ -38,7 +38,6 @@ class App {
 
     this.page = this.pages.get(this.template)
     this.page.create()
-    this.page.show()
 
     this.addEventListeners()
     this.addLinksEventsListeners()
@@ -46,10 +45,12 @@ class App {
 
   createPreloader () {
     this.preloader = new Preloader()
-    this.preloader.on('complete', this.onPreloaded)
+    this.preloader.once('complete', this.onPreloaded)
   }
 
   onPreloaded () {
+    this.page.show()
+
     this.onResize()
 
     this.createAnalytics()

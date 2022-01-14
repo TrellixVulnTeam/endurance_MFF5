@@ -28,10 +28,12 @@
 
 .preloader__number {
   font-family: $font-six-caps;
-  font-size: 80rem;
+  font-size: 100rem;
   color: #c0c0c0;
 
+  transform: translate(-50%, -50%);
+
   position: absolute;
-  left: 54%;
-  top: 4%;
+  left: 50%;
+  top: 50%;
 }

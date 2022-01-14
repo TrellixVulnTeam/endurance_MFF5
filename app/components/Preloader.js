@@ -47,16 +47,18 @@ export default class extends Component {
   }
 
   onComplete () {
-    this.timeline = GSAP.timeline()
+    return new Promise(resolve => {
+      this.timeline = GSAP.timeline()
 
-    this.timeline.to(this.element, {
-      autoAlpha: 0,
-      duration: 1,
-      delay: 1
-    })
+      this.timeline.to(this.element, {
+        autoAlpha: 0,
+        duration: 1,
+        delay: 2
+      })
 
-    this.timeline.call(_ => {
-      this.emit('complete')
+      this.timeline.call(_ => {
+        this.emit('complete')
+      })
     })
   }
 }
