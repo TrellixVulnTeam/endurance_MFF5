@@ -34,10 +34,13 @@
   font-family: $font-six-caps;
   font-size: 3.5rem;
   color: #1f1f1f;
+}
 
-  span {
-    transition: all 150ms ease-in-out;
-    overflow: hidden;
-  }
+.nav__link {
+  opacity: 0;
+}
 
+.char {
+  opacity: 0;
+  overflow: hidden;
 }

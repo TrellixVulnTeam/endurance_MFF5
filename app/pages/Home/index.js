@@ -21,8 +21,12 @@ export default class extends Page {
 
     Splitting()
 
+    // selectors for animations
     this.navSpans = document.querySelectorAll('.char')
-    this.linkSpans = document.querySelectorAll('.word')
+    this.navLinks = document.querySelectorAll('.nav__link')
+    this.storeLink = document.querySelector('.home__store__link')
+    this.storeLinkBefore = document.querySelector('.home__store__stripe:nth-child(1)')
+    this.storeLinkAfter = document.querySelector('.home__store__stripe:nth-child(3)')
   }
 
   /**
@@ -31,30 +35,58 @@ export default class extends Page {
   async show (url) {
     this.element.classList.add(this.classes.active)
 
-    // nav animation
-    const animateNav = gsap.timeline()
+    // nav title animation
+    const tl = gsap.timeline()
 
-    animateNav.from(this.navSpans, {
+    tl.to(this.navSpans, {
       stagger: 0.1,
-      opacity: 0,
-      duration: 0.01,
+      opacity: 1,
+      duration: 0.1,
       ease: Expo.easeOut
     })
+    tl.from(this.navSpans, {
+      stagger: 0.1,
+      rotateX: -105 + 'deg',
+      duration: 2,
+      ease: Expo.easeOut
+    }, '<')
 
     // gallery and text animation
-    gsap.from(this.elements.galleryWrapper, {
+    tl.from(this.elements.galleryWrapper, {
       left: -150 + 'vw',
       duration: 2,
-      delay: 3,
       ease: Expo.easeOut
     })
 
-    gsap.from(this.elements.titlesWrapper, {
-      left: -4000,
+    tl.from(this.elements.titlesWrapper, {
+      left: -3000,
       duration: 2,
-      delay: 3,
+      ease: Expo.easeOut
+    }, '<')
+
+    // nav links animation
+    tl.to(this.navLinks, {
+      opacity: 1,
+      duration: 0.5,
       ease: Expo.easeOut
     })
+
+    // store cta link animation
+    tl.to(this.storeLink, {
+      opacity: 1,
+      duration: 0.5,
+      ease: Expo.easeOut
+    }, '<')
+    tl.from(this.storeLinkBefore, {
+      width: 0,
+      duration: 0.5,
+      ease: Expo.easeOut
+    })
+    tl.from(this.storeLinkAfter, {
+      width: 0,
+      duration: 0.5,
+      ease: Expo.easeOut
+    }, '<')
 
     return super.show(url)
   }
