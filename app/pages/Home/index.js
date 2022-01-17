@@ -72,8 +72,8 @@ export default class extends Page {
     })
 
     // store cta link animation
-    tl.to(this.storeLink, {
-      opacity: 1,
+    tl.from(this.storeLink, {
+      opacity: 0,
       duration: 0.5,
       ease: Expo.easeOut
     }, '<')

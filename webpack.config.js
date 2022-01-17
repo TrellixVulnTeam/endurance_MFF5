@@ -3,6 +3,7 @@ const webpack = require('webpack')
 
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev'
 
@@ -48,13 +49,14 @@ module.exports = {
           from: './shared',
           to: ''
         }
-      ],
+      ]
     }),
 
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
     })
+
   ],
 
   module: {
@@ -122,6 +124,25 @@ module.exports = {
         loader: 'glslify-loader',
         exclude: /node_modules/
       }
+
+    ]
+  },
+
+  optimization: {
+    minimizer: [
+      '...',
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ['gifsicle', { interlaced: true }],
+              ['jpegtran', { progressive: true }],
+              ['optipng', { optimizationLevel: 5 }]
+            ]
+          }
+        }
+      })
     ]
   }
 }
