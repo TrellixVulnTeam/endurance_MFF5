@@ -34,8 +34,13 @@ app.get('/', async (request, response) => {
   })
 })
 
-app.get('/about', (request, response) => {
-  response.render('pages/about')
+app.get('/about', async (request, response) => {
+  const api = await initApi(request)
+  const { results: about } = await api.query(Prismic.Predicates.at('document.type', 'about'))
+
+  response.render('pages/about', {
+    about
+  })
 })
 
 app.get('/store', async (request, response) => {
